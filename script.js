@@ -1,0 +1,41 @@
+document.addEventListener("DOMContentLoaded", () => {
+    async function Login(event) {
+        event.preventDefault(); // Prevent form from submitting and reloading the page
+        const email = document.querySelector('#email').value;
+        const password = document.querySelector('#password').value;
+
+        try {
+            const call = await fetch("ajax.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    scope: "auth",
+                    action: "login",
+                    email: email, // Send the email and password with the request
+                    password: password
+                }),
+            });
+            const response = await call.json();
+
+            if (response.status === 200 && response.data) {
+                // Assuming the data contains user information from the database
+                if (response.data.userEmail === email && response.data.userPassword === password) {
+                    window.location.href = "dashboard.php";
+                }
+            } else {
+                console.error("Error login:", response.message);
+                const alert = document.querySelector("#message");
+                alert.innerHTML = "Invalid email or password";
+                alert.classList.add("alert-danger");
+            }
+        } catch (error) {
+            console.error("Fetch error:", error);
+        }
+    }
+
+    // Attach the Login function to the form submission event
+    const loginForm = document.querySelector("#loginForm");
+    loginForm.addEventListener("submit", Login);
+});
