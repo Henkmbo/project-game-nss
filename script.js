@@ -26,9 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             } else {
                 console.error("Error login:", response.message);
-                const alert = document.querySelector("#message");
-                alert.innerHTML = "Invalid email or password";
-                alert.classList.add("alert-danger");
+                Toastify({
+                    text: "Wrong email or password",
+                    duration: 3000,
+                    gravity: "top", // `top` or `bottom`
+                    position: "left", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                      background: "red",
+                    },
+                    onClick: function(){} // Callback after click
+                  }).showToast();
             }
         } catch (error) {
             console.error("Fetch error:", error);
