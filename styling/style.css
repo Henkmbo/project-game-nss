@@ -244,10 +244,6 @@ body {
   transition-delay: 0.2s;
 }
 
-.sidebar:hover .sidebar-links .menu-separator {
-  transition-delay: 0s;
-  transform: scaleX(0);
-}
 
 .sidebar-links {
   list-style: none;

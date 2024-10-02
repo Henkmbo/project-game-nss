@@ -66,7 +66,8 @@ function loadDashboard() {
     
     if (userName) {
         // Display user name on the dashboard
-        document.querySelector('.welcome').innerHTML = `<h1>Welcome, ${userName}!</h1>`;
+        document.querySelector('.profile').innerHTML = `${userName}`;
+        document.querySelector('.welcome').innerHTML = `<h3>Welcome, ${userName}!</h3>`;
     } else {
         // Redirect to login page if no user is logged in
         window.location.href = './index.html';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 02 okt 2024 om 07:35
+-- Gegenereerd op: 02 okt 2024 om 14:24
 -- Serverversie: 8.0.31
 -- PHP-versie: 8.2.0
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `userId` varchar(4) NOT NULL,
+  `userName` varchar(255) NOT NULL,
   `userEmail` varchar(255) NOT NULL,
   `userPassword` varchar(255) NOT NULL,
   `userIsActive` tinyint(1) NOT NULL DEFAULT '1',
@@ -40,8 +41,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Gegevens worden geëxporteerd voor tabel `users`
 --
 
-INSERT INTO `users` (`userId`, `userEmail`, `userPassword`, `userIsActive`) VALUES
-('3efW', 'admin', 'admin1', 1);
+INSERT INTO `users` (`userId`, `userName`, `userEmail`, `userPassword`, `userIsActive`) VALUES
+('3efW', 'Gert', 'admin', 'admin1', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
