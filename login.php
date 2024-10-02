@@ -13,24 +13,25 @@
     <!-- Login form container -->
     <form id="loginForm">
 
-      <!-- Email input box -->
-      <div class="input_box">
-        <label for="email">Email</label>
-        <input type="text" id="email" placeholder="Enter email address" required />
-      </div>
+<!-- Email input box -->
+<div class="input_box">
+  <label for="email">Email</label>
+  <input type="text" id="email" placeholder="Enter email address" required />
+</div>
 
-      <!-- Password input box -->
-      <div class="input_box">
-        <div class="password_title">
-          <label for="password">Password</label>
-          <a href="#">Forgot Password? </a>
-        </div>
-        <input type="password" id="password" placeholder="Enter your password" required />
-      </div>
+<!-- Password input box -->
+<div class="input_box">
+  <div class="password_title">
+    <label for="password">Password</label>
+    <a href="#">Forgot Password? </a>
+  </div>
+  <input type="password" id="password" placeholder="Enter your password" required />
+</div>
 
-      <!-- Login button -->
-      <button type="submit">Login</button>
-    </form>
+<!-- Login button -->
+<button type="submit">Login</button>
+</form>
+
     <!-- Message container to show errors or success -->
     <div id="message"></div>
   </div>

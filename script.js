@@ -1,50 +1,86 @@
-document.addEventListener("DOMContentLoaded", () => {
-    async function Login(event) {
-        event.preventDefault(); // Prevent form from submitting and reloading the page
-        const email = document.querySelector('#email').value;
-        const password = document.querySelector('#password').value;
+document.addEventListener('DOMContentLoaded', function () {    
+    // Check if we are on the login page or the dashboard page
+    if (window.location.pathname.includes('dashboard.php')) {
+        loadDashboard();
+    } else if (window.location.pathname.includes('login.php')) {
+        setupLogin();
+    }
+});
 
-        try {
-            const call = await fetch("ajax.php", {
-                method: "POST",
+// Function to set up the login form behavior
+function setupLogin() {
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Check if email and password are provided
+        if (email && password) {
+            fetch('./ajax.php', {
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json",
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    scope: "auth",
-                    action: "login",
-                    email: email, // Send the email and password with the request
-                    password: password
+                    scope: 'auth',
+                    action: 'login',
+                    email: email,
+                    password: password,
                 }),
-            });
-            const response = await call.json();
-
-            if (response.status === 200 && response.data) {
-                // Assuming the data contains user information from the database
-                if (response.data.userEmail === email && response.data.userPassword === password) {
-                    // Redirect to the dashboard page
-                    window.location.href = "dashboard.php";
+            })
+            .then(response => {
+                console.log('Response:', response); // Log the response object
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-            } else {
-                console.error("Error login:", response.message);
-                Toastify({
-                    text: "Wrong email or password",
-                    duration: 3000,
-                    gravity: "top", // `top` or `bottom`
-                    position: "left", // `left`, `center` or `right`
-                    stopOnFocus: true, // Prevents dismissing of toast on hover
-                    style: {
-                      background: "red",
-                    },
-                    onClick: function(){} // Callback after click
-                  }).showToast();
-            }
-        } catch (error) {
-            console.error("Fetch error:", error);
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === 200) {
+                    // Store session data in sessionStorage
+                    sessionStorage.setItem('userEmail', data.data.userEmail);
+                    sessionStorage.setItem('userName', data.data.userName);
+            
+                    // Redirect to dashboard
+                    window.location.href = './dashboard.php';
+                } else {
+                    // Show error message
+                    showMessage(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error); // Log the error
+                showMessage('An error occurred. Please try again later.', 'error');
+            });
+            
+        } else {
+            showMessage('Please fill in all fields', 'error');
         }
-    }
+    });
+}
 
-    // Attach the Login function to the form submission event
-    const loginForm = document.querySelector("#loginForm");
-    loginForm.addEventListener("submit", Login);
-});
+// Function to load dashboard information
+function loadDashboard() {    
+    const userName = sessionStorage.getItem('userName');
+    
+    if (userName) {
+        // Display user name on the dashboard
+        document.querySelector('.welcome').innerHTML = `<h1>Welcome, ${userName}!</h1>`;
+    } else {
+        // Redirect to login page if no user is logged in
+        window.location.href = './index.html';
+    }
+}
+
+// Function to show toast messages
+function showMessage(message, type) {
+    Toastify({
+        text: message,
+        duration: 3000,
+        close: true,
+        gravity: 'top',
+        position: 'center',
+        backgroundColor: type === 'error' ? 'red' : 'green',
+    }).showToast();
+}
