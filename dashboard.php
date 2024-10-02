@@ -40,10 +40,35 @@
     </ul>
   </aside>
 
-  <div class="wrap">
+  <div class="navbar">
+    <div class="wrap-right">
+        <div class="flex justify-space-between ">
+          <div class="p-20">
+            test
+          </div>
+          <div class="navbar-border p-l-40 p-r-40 p-t-20 p-b-20">
+            <div class="flex">
+              <div class="flex align-center">
+                test
+              </div>
+              <div>
+                <div>
+                  test
+                </div>
+                <div>
+                  test
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="wrap-right">
     <div class="row">
       <div class="col6">
-        test
+        
       </div>
       <div class="col6">
         <div class="edit">

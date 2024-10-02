@@ -316,3 +316,11 @@ body {
   background: #fff;
   border-radius: 4px;
 }
+
+.navbar {
+  border-bottom: 1px solid#ebe9e9;
+}
+
+.navbar .navbar-border {
+  border-left: 1px solid#ebe9e9;
+}
