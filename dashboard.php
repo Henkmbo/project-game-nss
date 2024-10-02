@@ -41,23 +41,23 @@
   </aside>
 
   <div class="wrap">
-  <table style="width:65%">
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-</table>
+    <div class="row">
+      <div class="col6">
+        test
+      </div>
+      <div class="col6">
+        <div class="edit">
+
+        </div>
+        <div class="title">
+
+        </div>
+        <div class="email">
+
+        </div>
+        
+      </div>
+    </div>
   </div>
   
 
