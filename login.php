@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
+  <div class="login">
   <div class="login_form">
     <!-- Login form container -->
     <form id="loginForm">
@@ -33,7 +34,7 @@
     <!-- Message container to show errors or success -->
     <div id="message"></div>
   </div>
-
+  </div>
   <script src="./script.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>

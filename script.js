@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.status === 200 && response.data) {
                 // Assuming the data contains user information from the database
                 if (response.data.userEmail === email && response.data.userPassword === password) {
+                    // Redirect to the dashboard page
                     window.location.href = "dashboard.php";
                 }
             } else {
