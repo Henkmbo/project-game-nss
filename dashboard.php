@@ -28,7 +28,7 @@
         <div class="menu-separator"></div>
       </h4>
       <li>
-        <a href="#"><span class="material-symbols-outlined"> account_circle </span>Profile</a>
+        <a href="./admin_memory/profile.php"><span class="material-symbols-outlined"> account_circle </span>Profile</a>
       </li>
       <li>
         <a href="#"><span class="material-symbols-outlined"> settings </span>Settings</a>

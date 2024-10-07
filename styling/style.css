@@ -359,3 +359,28 @@ body {
   border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+.dashboard-profile .title {
+  line-height: 1.2;
+  border-bottom: 1px solid#4f52ba;
+  width: 75px;
+}
+
+.profile .detail {
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.profile .image {
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.profile .detail .content {
+    background-color: #e9e5e5;
+    border: 1px solid #ccc7c7;
+    border-radius: 5px;
+    padding: 10px;
+}
