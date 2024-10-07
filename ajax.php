@@ -50,7 +50,7 @@ if (isset($decodedParams->scope) && !empty($decodedParams->scope)) {
                     $response['status'] = 500;
                     $response['message'] = 'Database query failed';
                 }
-            }
+            } 
         }
     }
     

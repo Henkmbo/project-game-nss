@@ -41,20 +41,16 @@
   <div class="wrap-right" >
         <h1 class="text-center">Memory Cards</h1>
         <table>
-  <tr>
-    <th>Questions</th>
-    <th>Answers</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td><a href="">Edit</a></td>
-    <td><a href="">Delete</a></td>
-  </tr>
-
-  
+  <thead>
+    <tr>
+      <th>Questions</th>
+      <th>Answers</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody id="questions">
+  </tbody>
 </table>
   </div>
   
