@@ -63,60 +63,32 @@ function setupLogin() {
 }
 async function getQuestions() {
     try {
-      const call = await fetch("../ajax.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          scope: "memory",
-          action: "getQuestions",
-        }),
-      });
-  
-      const response = await call.json();
-      if (response.status === 200) {
-        const questionsTable = document.getElementById("questions");
-        questionsTable.innerHTML = ""; // Clear any existing content
-  
-        response.data.forEach((question) => {
-          // Create a new row for each question
-          const newRow = document.createElement("tr");
-  
-          // Create table cells for question, answer (placeholder), edit and delete actions
-          const questionCell = document.createElement("td");
-          questionCell.textContent = question.questionText;
-  
-          const answerCell = document.createElement("td");
-          answerCell.textContent = "Answer Placeholder"; // You can populate this with actual answer data
-  
-          const editCell = document.createElement("td");
-          const editLink = document.createElement("a");
-          editLink.href = "#"; // Add a link to your edit page if needed
-          editLink.textContent = "Edit";
-          editCell.appendChild(editLink);
-  
-          const deleteCell = document.createElement("td");
-          const deleteLink = document.createElement("a");
-          deleteLink.href = "#"; // Add a link to delete function
-          deleteLink.textContent = "Delete";
-          deleteCell.appendChild(deleteLink);
-  
-          // Append all cells to the row
-          newRow.appendChild(questionCell);
-          newRow.appendChild(answerCell);
-          newRow.appendChild(editCell);
-          newRow.appendChild(deleteCell);
-  
-          // Append the new row to the table
-          questionsTable.appendChild(newRow);
+        const call = await fetch("../ajax.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                scope: "memory",
+                action: "getMemory",
+            }),
         });
-      }
+
+        const response = await call.json();
+        if (response.status === 200) {
+            let questions = response.data.questions;
+            let answers = response.data.answers;
+            const memoryTable = document.getElementById("memory");
+            memoryTable.innerHTML = ""; // Clear previous data
+
+          
+        }
+        
     } catch (error) {
-      console.error("Fetch error:", error);
+        console.error("Fetch error:", error);
     }
-  }
-  
+}
+
 
 function logOut() {
   // Clear session data

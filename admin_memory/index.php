@@ -49,7 +49,7 @@
       <th>Delete</th>
     </tr>
   </thead>
-  <tbody id="questions">
+  <tbody id="memory">
   </tbody>
 </table>
   </div>
