@@ -75,7 +75,11 @@ async function getQuestions() {
     });
     const response = await call.json();
     if(response.status === 200) {
-      
+        response.data.forEach((question) => {
+            console.log(question.questionText);
+        });
+            
+        
     }
   } catch (error) {
     console.error("Fetch error:", error);
