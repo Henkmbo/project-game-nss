@@ -19,7 +19,7 @@
           <span class="material-symbols-outlined">Home </span>Home</a>
       </li>
       <li>
-        <a href="#"><span class="material-symbols-outlined">Memory </span>Memory</a>
+        <a href="./admin_memory/index.php"><span class="material-symbols-outlined">Memory </span>Memory</a>
       </li>
       <li>
         <a href="#"><span class="material-symbols-outlined"> monitoring </span>Backend developer</a>

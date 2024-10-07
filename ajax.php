@@ -37,7 +37,23 @@ if (isset($decodedParams->scope) && !empty($decodedParams->scope)) {
                 
             }
         }
+    } if ($decodedParams->scope == 'memory') {
+        if(isset($decodedParams->action) && !empty($decodedParams->action)) {
+            if ($decodedParams->action == 'getQuestions') {
+                $stmt = $dbh->prepare("SELECT * FROM questions");
+                if ($stmt->execute()) {
+                    $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    $response['status'] = 200;
+                    $response['message'] = 'questions retrieved';
+                    $response['data'] = $questions;
+                } else {
+                    $response['status'] = 500;
+                    $response['message'] = 'Database query failed';
+                }
+            }
+        }
     }
+    
 }
 
 echo json_encode($response);
