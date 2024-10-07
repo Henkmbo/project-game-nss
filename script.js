@@ -46,7 +46,7 @@ function setupLogin() {
               sessionStorage.setItem("userPassword", data.data.userPassword);
 
               // Redirect to dashboard
-              window.location.href = "./dashboard.php";
+              window.location.href = "./admin_memory/dashboard.php";
             } else {
               // Show error message
               showMessage(data.message, "error");
@@ -97,7 +97,7 @@ function logOut() {
     sessionStorage.removeItem("userPassword");
 
   // Redirect to login page
-  window.location.href = "./index.php";
+  window.location.href = "../index.php";
 }
 
 
