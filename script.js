@@ -5,6 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
   } else if (window.location.pathname.includes("login.php")) {
     setupLogin();
   }
+
+  // Check if we are on the login page or the dashboard page
+  if (window.location.pathname.includes("profile.php")) {
+    loadProfile();
+  } else if (window.location.pathname.includes("login.php")) {
+    setupLogin();
+  }
 });
 
 // Function to set up the login form behavior
@@ -43,7 +50,9 @@ function setupLogin() {
               // Store session data in sessionStorage
               sessionStorage.setItem("userEmail", data.data.userEmail);
               sessionStorage.setItem("userName", data.data.userName);
+              sessionStorage.setItem("userLastname", data.data.userLastname);
               sessionStorage.setItem("userPassword", data.data.userPassword);
+
 
               // Redirect to dashboard
               window.location.href = "./admin_memory/dashboard.php";
@@ -94,7 +103,8 @@ function logOut() {
   // Clear session data
   sessionStorage.removeItem("userEmail");
   sessionStorage.removeItem("userName");
-    sessionStorage.removeItem("userPassword");
+  sessionStorage.removeItem("userLastname");
+  sessionStorage.removeItem("userPassword");
 
   // Redirect to login page
   window.location.href = "../index.php";
@@ -104,6 +114,7 @@ function logOut() {
 // Functie om dashboardinformatie te laden
 function loadDashboard() {  
   const userName = sessionStorage.getItem("userName");
+  const userLastname = sessionStorage.getItem("userLastname");
 
   if (userName) {
       document.querySelector(".welcome").innerHTML = `<h3>Welkom, ${userName}!</h3>`;
@@ -111,6 +122,65 @@ function loadDashboard() {
       alert("Je bent niet ingelogd. Log in om deze pagina te openen.");
       window.location.href = "./index.php";
   }
+
+  if (userName) {
+    document.querySelector(".navbar-profile-name").innerHTML = `${userName} ${userLastname}`;
+} else {
+    alert("Je bent niet ingelogd. Log in om deze pagina te openen.");
+    window.location.href = "./index.php";
+}
+}
+
+// Functie om profiel informatie te laden
+function loadProfile() {  
+  const userName = sessionStorage.getItem("userName");
+  const userLastname = sessionStorage.getItem("userLastname");
+  const userEmail = sessionStorage.getItem("userEmail");
+  const userPassword = sessionStorage.getItem("userPassword");
+
+  if (userName) {
+    document.querySelector(".loadprofile").innerHTML = `
+                        <div class="row">
+                          <div class="col6">
+                              <div class="title p-b-10">
+                                  Voornaam:
+                              </div>
+                              <div class="content">
+                                ${userName}
+                              </div>
+                          </div>
+                          <div class="col6">
+                              <div class="title p-b-10">
+                                  Achternaam:
+                              </div>
+                              <div class="content">
+                                ${userLastname}
+                              </div>
+                          </div>
+                          <div class="col12 p-t-20">
+                              <div class="title p-b-10">
+                                  Emailadres:
+                              </div>
+                              <div class="content">
+                                ${userEmail}
+                              </div>
+                          </div>
+                          <div class="col12 p-t-20">
+                              <div class="title p-b-10">
+                                  Wachtwoord:
+                              </div>
+                              <div class="content">
+                                ${userPassword}
+                              </div>
+                          </div>
+                      </div>
+    `;
+  } else {
+    alert("Je bent niet ingelogd. Log in om deze pagina te openen.");
+    window.location.href = "./index.php";
+  }
+
+  
 }
 
 

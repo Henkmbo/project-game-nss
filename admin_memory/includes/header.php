@@ -57,7 +57,9 @@
               </div>
               <div>
                 <div class="title profile">
-                  Gerwin de Heus
+                    <div class="navbar-profile-name">
+
+                    </div>
                 </div>
                 <div class="description">
                   Admin

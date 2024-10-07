@@ -11,39 +11,8 @@
         <div class="row">
             <div class="col8">
                 <div class="detail p-t-50 p-b-50 p-l-30 p-r-30">
-                    <div class="row">
-                        <div class="col6">
-                            <div class="title p-b-10">
-                                Voornaam:
-                            </div>
-                            <div class="content">
-                                test
-                            </div>
-                        </div>
-                        <div class="col6">
-                            <div class="title p-b-10">
-                                Achternaam:
-                            </div>
-                            <div class="content">
-                                test
-                            </div>
-                        </div>
-                        <div class="col12 p-t-20">
-                            <div class="title p-b-10">
-                                Emailadres:
-                            </div>
-                            <div class="content">
-                                test
-                            </div>
-                        </div>
-                        <div class="col12 p-t-20">
-                            <div class="title p-b-10">
-                                Wachtwoord:
-                            </div>
-                            <div class="content">
-                                test
-                            </div>
-                        </div>
+                    <div class="loadprofile">
+                        
                     </div>
                 </div>
                 <div class="p-t-30">
