@@ -25,7 +25,6 @@
         <a href="#"><span class="material-symbols-outlined"> monitoring </span>Backend developer</a>
       </li>     
       <h4>
-        <span>Account</span>
         <div class="menu-separator"></div>
       </h4>
       <li>
