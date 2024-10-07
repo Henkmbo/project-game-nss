@@ -76,10 +76,10 @@ async function getQuestions() {
 
         const response = await call.json();
         if (response.status === 200) {
-            let questions = response.data.questions;
-            let answers = response.data.answers;
-            const memoryTable = document.getElementById("memory");
-            memoryTable.innerHTML = ""; // Clear previous data
+            // let questions = response.data.questions;
+            // let answers = response.data.answers;
+            // const memoryTable = document.getElementById("memory");
+            // memoryTable.innerHTML = ""; // Clear previous data
 
           
         }
@@ -100,22 +100,19 @@ function logOut() {
   window.location.href = "./index.php";
 }
 
-// Function to load dashboard information
-function loadDashboard() {
+
+// Functie om dashboardinformatie te laden
+function loadDashboard() {  
   const userName = sessionStorage.getItem("userName");
 
   if (userName) {
-    // Display user name on the dashboard
-    document.querySelector(".profile").innerHTML = `${userName}`;
-    document.querySelector(
-      ".welcome"
-    ).innerHTML = `<h3>Welcome, ${userName}!</h3>`;
+      document.querySelector(".welcome").innerHTML = `<h3>Welkom, ${userName}!</h3>`;
   } else {
-    // Redirect to login page if no user is logged in
-    alert("You are not logged in. Please log in to access this page.");
-    window.location.href = "./index.php";
+      alert("Je bent niet ingelogd. Log in om deze pagina te openen.");
+      window.location.href = "./index.php";
   }
 }
+
 
 // Function to show toast messages
 function showMessage(message, type) {

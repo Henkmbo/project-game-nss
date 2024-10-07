@@ -94,7 +94,7 @@
                   Aantal gebruikers
                 </div>
                 <div>
-                  <strong>1</strong>
+                  <strong class="amountOfUsers">1</strong>
                 </div>
               </div>
               </div>
