@@ -15,6 +15,7 @@ function setupLogin() {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
+        
         // Check if email and password are provided
         if (email && password) {
             fetch('./ajax.php', {
@@ -60,6 +61,15 @@ function setupLogin() {
     });
 }
 
+function logOut() {
+    // Clear session data
+    sessionStorage.removeItem('userEmail');
+    sessionStorage.removeItem('userName');
+
+    // Redirect to login page
+    window.location.href = './index.php';
+}
+
 // Function to load dashboard information
 function loadDashboard() {    
     const userName = sessionStorage.getItem('userName');
@@ -70,7 +80,8 @@ function loadDashboard() {
         document.querySelector('.welcome').innerHTML = `<h3>Welcome, ${userName}!</h3>`;
     } else {
         // Redirect to login page if no user is logged in
-        window.location.href = './index.html';
+        alert('You are not logged in. Please log in to access this page.');
+        window.location.href = './index.php';
     }
 }
 

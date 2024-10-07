@@ -34,7 +34,7 @@
         <a href="#"><span class="material-symbols-outlined"> settings </span>Settings</a>
       </li>
       <li>
-        <a href="./index.html"><span class="material-symbols-outlined"> logout </span>Logout</a>
+        <a onclick="logOut()"><span class="material-symbols-outlined"> logout </span>Logout</a>
       </li>
     </ul>
   </aside>
