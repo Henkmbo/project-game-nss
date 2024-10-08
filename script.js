@@ -247,26 +247,36 @@ async function getQuestionsMemory() {
 
       const response = await call.json();
       if (response.status === 200) {
-          let questions = response.data.questions;
-          let answers = response.data.answers;
-
-          let cardsHtml = '';
-
-          for (let i = 0; i < questions.length; i++) {
-
-              cardsHtml += `
-                  <div class="card" question="${i + 1}">
-                      <div class="img">${questions[i].questionText}</div>
-                  </div>
-                  <div class="card" question="${i + 1}">
-                      <div class="img">${answers[i].answerText}</div>
-                  </div>
-              `;
-          }
-
-          document.querySelector(".cards").innerHTML = cardsHtml;
-
-          addCardEventListeners();
+        let questions = response.data.questions;
+        let answers = response.data.answers;
+    
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; 
+            }
+        }
+  
+        let combinedCards = [];
+        for (let i = 0; i < questions.length; i++) {
+            combinedCards.push({ type: 'question', id: i + 1, text: questions[i].questionText });
+            combinedCards.push({ type: 'answer', id: i + 1, text: answers[i].answerText });
+        }
+    
+        shuffleArray(combinedCards);
+    
+        let cardsHtml = '';
+        combinedCards.forEach(card => {
+            cardsHtml += `
+                <div class="card" question="${card.id}">
+                    <div class="img">${card.text}</div>
+                </div>
+            `;
+        });
+    
+        document.querySelector(".cards").innerHTML = cardsHtml;
+    
+        addCardEventListeners();
       }
   } catch (error) {
       console.error("Fetch error:", error);
