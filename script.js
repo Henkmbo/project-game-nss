@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
   } else if (window.location.pathname.includes("profile.php")) {
     loadProfile();
     loadNavbar();  
+  } else if (window.location.pathname.includes("profile-edit.php")) {
+    loadNavbar();  
+    loadProfile();
   } else if (window.location.pathname.includes("index.php")) {
     loadNavbar();  
   } else if (window.location.pathname.includes("login.php")) {

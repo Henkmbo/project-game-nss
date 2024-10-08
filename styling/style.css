@@ -385,6 +385,12 @@ body {
     padding: 10px;
 }
 
+.dashboard-profile-edit .title {
+  line-height: 1.2;
+  border-bottom: 1px solid#4f52ba;
+  width: 130px;
+}
+
 .dashboard-memory .title {
   line-height: 1.2;
   border-bottom: 1px solid#4f52ba;
