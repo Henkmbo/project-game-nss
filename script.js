@@ -1,21 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
-  // Check if we are on the login page or the dashboard page
+
   if (window.location.pathname.includes("dashboard.php")) {
     loadDashboard();
-  } else if (window.location.pathname.includes("login.php")) {
-    setupLogin();
-  }
-
-  // Check if we are on the login page or the dashboard page
-  if (window.location.pathname.includes("profile.php")) {
+    loadNavbar();  
+  } else if (window.location.pathname.includes("profile.php")) {
     loadProfile();
+    loadNavbar();  
+  } else if (window.location.pathname.includes("index.php")) {
+    loadNavbar();  
   } else if (window.location.pathname.includes("login.php")) {
-    setupLogin();
+    setupLogin();  
   }
 });
-
-
 
 // Function to set up the login form behavior
 function setupLogin() {
@@ -104,7 +100,7 @@ async function getQuestions() {
 
           getQuestions.forEach((question, index) => {
             
-            let correspondingAnswer = getAnswers[index];
+          let correspondingAnswer = getAnswers[index];
 
             htmlContent += `
               <div class="row body">
@@ -116,16 +112,7 @@ async function getQuestions() {
             `;
           });
 
-        
           container.innerHTML = htmlContent;
-
-          
-          
-
-            // let answers = response.data.answers;
-            // const memoryTable = document.getElementById("memory");
-            // memoryTable.innerHTML = ""; // Clear previous data
-
           
         }
         
