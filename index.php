@@ -11,8 +11,10 @@
     <h1> Welkom bij onze memory game</h1>
     <p>test je back end kennis met onze memory</p>
 </section>
-<div>
+<div class="flexcontainer">
     
+
+</div>
     <a href="./login.php">Login</a>
     <a href="./uitleg.php">Login</a>
 </body>
