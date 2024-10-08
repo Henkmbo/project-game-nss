@@ -69,6 +69,9 @@ function setupLogin() {
       }
     });
 }
+
+
+
 async function getQuestions() {
     try {
         const call = await fetch("../ajax.php", {
@@ -228,3 +231,90 @@ function showMessage(message, type) {
   }).showToast();
 }
 getQuestions();
+
+async function getQuestionsMemory() {
+  try {
+      const call = await fetch("./ajax.php", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+              scope: "memory",
+              action: "getMemory",
+          }),
+      });
+
+      const response = await call.json();
+      if (response.status === 200) {
+          let questions = response.data.questions;
+          let answers = response.data.answers;
+
+          let cardsHtml = '';
+
+          for (let i = 0; i < questions.length; i++) {
+
+              cardsHtml += `
+                  <div class="card" question="${i + 1}">
+                      <div class="img">${questions[i].questionText}</div>
+                  </div>
+                  <div class="card" question="${i + 1}">
+                      <div class="img">${answers[i].answerText}</div>
+                  </div>
+              `;
+          }
+
+          document.querySelector(".cards").innerHTML = cardsHtml;
+
+          addCardEventListeners();
+      }
+  } catch (error) {
+      console.error("Fetch error:", error);
+  }
+}
+
+function addCardEventListeners() {
+  let counter = 0;
+  let firstSelection = "";
+  let secondSelection = "";
+
+  const cards = document.querySelectorAll(".cards .card");
+  cards.forEach((card) => {
+      card.addEventListener("click", () => {
+          card.classList.add("clicked");
+
+          if(counter === 0) {
+              firstSelection = card.getAttribute("question");
+              counter++;
+          } else {
+              secondSelection = card.getAttribute("question");
+              counter = 0;
+
+              if(firstSelection === secondSelection){
+                  const correctCards = document.querySelectorAll(
+                      ".card[question='" + firstSelection +"']"
+                  );
+
+                  correctCards[0].classList.add("checked");
+                  correctCards[0].classList.remove("clicked");
+                  correctCards[1].classList.add("checked");
+                  correctCards[1].classList.remove("clicked");
+              } else {
+                  const incorrectCards = document.querySelectorAll(".card.clicked");
+
+                  incorrectCards[0].classList.add("shake");
+                  incorrectCards[1].classList.add("shake");
+
+                  setTimeout(() => {
+                      incorrectCards[0].classList.remove("shake");
+                      incorrectCards[0].classList.remove("clicked");
+                      incorrectCards[1].classList.remove("shake");
+                      incorrectCards[1].classList.remove("clicked");
+                  }, 800);
+              }
+          }
+      });
+  });
+}
+
+getQuestionsMemory();
