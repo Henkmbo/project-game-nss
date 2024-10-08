@@ -8,18 +8,18 @@
   <!-- Linking Google Font Link For Icons -->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="./styling/style.css" />
-  <link rel="stylesheet" href="./styling/standard.css">
+  <link rel="stylesheet" href="../styling/style.css" />
+  <link rel="stylesheet" href="../styling/standard.css">
 </head>
 <body>
   <aside class="sidebar">
     <ul class="sidebar-links">
       <li>
-        <a href="#">
+        <a href="./dashboard.php">
           <span class="material-symbols-outlined">Home </span>Home</a>
       </li>
       <li>
-        <a href="#"><span class="material-symbols-outlined">Memory </span>Memory</a>
+        <a href="./index.php"><span class="material-symbols-outlined">Memory </span>Memory</a>
       </li>
       <li>
         <a href="#"><span class="material-symbols-outlined"> monitoring </span>Backend developer</a>
@@ -28,13 +28,13 @@
         <div class="menu-separator"></div>
       </h4>
       <li>
-        <a href="#"><span class="material-symbols-outlined"> account_circle </span>Profile</a>
+        <a href="./profile.php"><span class="material-symbols-outlined"> account_circle </span>Profile</a>
       </li>
       <li>
         <a href="#"><span class="material-symbols-outlined"> settings </span>Settings</a>
       </li>
       <li>
-        <a href="./index.html"><span class="material-symbols-outlined"> logout </span>Logout</a>
+        <a onclick="logOut()"><span class="material-symbols-outlined"> logout </span>Logout</a>
       </li>
     </ul>
   </aside>
@@ -57,7 +57,9 @@
               </div>
               <div>
                 <div class="title profile">
-                  Gerwin de Heus
+                    <div class="navbar-profile-name">
+
+                    </div>
                 </div>
                 <div class="description">
                   Admin
@@ -68,56 +70,3 @@
         </div>
     </div>
   </div>
-
-  <div class="dashboard p-t-40 p-b-40">
-    <div class="wrap-right">
-      <div class="title"><strong><h2>Dashboard</h2></strong></div>
-      <div class="p-t-10">
-        <div class="welcome">
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="activities">
-    <div class="wrap-right">
-      <div class="row">
-        <div class="col3">
-          <div class="card">
-            test
-          </div>
-        </div>
-        <div class="col3">
-          <div class="card">
-            test
-          </div>
-        </div>
-        <div class="col3">
-          <div class="card">
-            test
-          </div>
-        </div>
-        <div class="col3">
-          <div class="card">
-            test
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  
-  
-
-
-
-</body>
-<script src="./script.js"></script>
-<style>
-  table, th, td {
-  border:1px solid black;
-}
-</style>
-</html>
