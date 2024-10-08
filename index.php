@@ -14,6 +14,6 @@
 <div>
     
     <a href="./login.php">Login</a>
-    <a href="./uitleg.php">Login</a>
+    <a href="./uitleg.php">Uitleg</a>
 </body>
 </html>
