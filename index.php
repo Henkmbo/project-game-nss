@@ -13,5 +13,6 @@
 </section>
 
     <a href="./login.php">Login</a>
+    <a href="./uitleg.php">Login</a>
 </body>
 </html>
