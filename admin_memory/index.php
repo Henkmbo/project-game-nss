@@ -24,17 +24,8 @@
         </div>
       </div>
       <div>
-        <div class="row body">
-          <div class="col4"><div class="content">test</div></div>
-          <div class="col4"><div class="content">test</div></div>
-          <div class="col2"><div class="content">test</div></div>
-          <div class="col2"><div class="content">test</div></div>
-        </div>
-        <div class="row body">
-          <div class="col4"><div class="content">test</div></div>
-          <div class="col4"><div class="content">test</div></div>
-          <div class="col2"><div class="content">test</div></div>
-          <div class="col2"><div class="content">test</div></div>
+        <div class="test">
+
         </div>
       </div>
     </div>

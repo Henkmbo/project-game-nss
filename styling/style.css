@@ -433,5 +433,19 @@ body {
 }
 
 .admin-memory .body .content{
-  padding: 10px 0px;
+  padding: 15px 0px;
+}
+
+.admin-memory .body .edit{
+  background-color: orange;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.admin-memory .body .delete{
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
 }
