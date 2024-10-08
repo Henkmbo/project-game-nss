@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  loadNavbar();
   // Check if we are on the login page or the dashboard page
   if (window.location.pathname.includes("dashboard.php")) {
     loadDashboard();
@@ -13,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     setupLogin();
   }
 });
+
+
 
 // Function to set up the login form behavior
 function setupLogin() {
@@ -85,6 +88,8 @@ async function getQuestions() {
 
         const response = await call.json();
         if (response.status === 200) {
+
+          console.log(response);
             // let questions = response.data.questions;
             // let answers = response.data.answers;
             // const memoryTable = document.getElementById("memory");
@@ -116,6 +121,8 @@ function loadDashboard() {
   const userName = sessionStorage.getItem("userName");
   const userLastname = sessionStorage.getItem("userLastname");
 
+  console.log(userLastname);
+
   if (userName) {
       document.querySelector(".welcome").innerHTML = `<h3>Welkom, ${userName}!</h3>`;
   } else {
@@ -123,9 +130,16 @@ function loadDashboard() {
       window.location.href = "./index.php";
   }
 
+  
+}
+
+function loadNavbar() {
+  const userName = sessionStorage.getItem("userName");
+  const userLastname = sessionStorage.getItem("userLastname");
+
   if (userName) {
     document.querySelector(".navbar-profile-name").innerHTML = `${userName} ${userLastname}`;
-} else {
+    } else {
     alert("Je bent niet ingelogd. Log in om deze pagina te openen.");
     window.location.href = "./index.php";
 }
