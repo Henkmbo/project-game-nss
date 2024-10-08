@@ -14,3 +14,10 @@
     font-size: 20px;
     margin-bottom: 30px;
 }
+.flexcontainer {
+    background-color: lightgrey;
+    width: 3000px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+}

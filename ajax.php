@@ -15,7 +15,7 @@ if (isset($decodedParams->scope) && !empty($decodedParams->scope)) {
                 $stmt = $dbh->prepare("SELECT * FROM users WHERE userEmail = :userEmail AND userPassword = :userPassword");
                 $stmt->bindParam(':userEmail', $email);  
                 $stmt->bindParam(':userPassword', $password);
-
+                
                 if ($stmt->execute()) {
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     if ($user) {
