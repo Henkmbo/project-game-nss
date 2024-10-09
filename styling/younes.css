@@ -85,7 +85,7 @@ body {
 }
 .box img {
     width: 100%; 
-    max-width: 500px;
+    max-width: 300px;
     height: auto;
 }
 
@@ -96,3 +96,4 @@ body {
 .box p {
     font-size: 20px;
 }
+
