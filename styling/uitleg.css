@@ -1,5 +1,5 @@
 body { 
-    background-color: rgb(234, 228, 228);
+    background-color: #eaeaea;
 }
 .boven { 
     text-align: center;
@@ -20,4 +20,8 @@ body {
         margin-left: auto;
         margin-right: auto;
         position: sticky;
+}
+
+.boxes { 
+    
 }

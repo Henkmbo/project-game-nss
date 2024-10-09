@@ -10,6 +10,7 @@
     <div class="boven">
         <h1><b>Memory Speluitleg</b></h1>
     </div>
+    <section class="boxes">
     <div class="basis">
         <h2><b>Memory! Het spel waar je geheugen getest wordt. Simpel maar effectief.</b></h2>
         <h3>Durf jij je kennis te testen?</h3>
@@ -33,6 +34,6 @@ Wanneer alle paren zijn gevonden, wordt het spel automatisch beëindigd en krijg
 <br>
 <h2><b>Veel plezier met het online Memory spel!</b></h2></h3>
     </div>
-
+</section>
 </body>
 </html>
