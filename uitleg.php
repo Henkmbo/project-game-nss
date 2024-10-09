@@ -21,7 +21,8 @@ Het doel van Memory is om zoveel mogelijk paren van dezelfde kaarten te vinden e
 <br><br>
 <b>Spelverloop:</b><br>
 Het spelbord verschijnt online met een aantal kaarten die met de achterkant naar boven liggen. Het aantal kaarten varieert per spel, afhankelijk van het niveau of de instellingen.
-<br><br>
+<br><br></div>
+<div class="basis">
 De eerste speler klikt op twee kaarten om deze om te draaien en de afbeeldingen zichtbaar te maken:
 Als de kaarten een paar vormen (dezelfde afbeelding of tekst), blijven de kaarten omgedraaid en worden aan de verzameling van de speler toegevoegd. De speler mag daarna opnieuw twee kaarten omdraaien.
 Als de kaarten niet overeenkomen, draaien ze automatisch terug naar hun oorspronkelijke positie (met de achterkant naar boven), en is de volgende speler aan de beurt.
