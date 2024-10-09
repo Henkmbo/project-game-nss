@@ -1,23 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaeaea;
+    color: #333;
+}
 .hero {
     text-align: center;
     padding: 50px;
-    background-color: rgb(3, 3, 3);
+    background-color: #007bff;
     color: white;
 }
 
 .hero h1 {
-    font-size: 50px;
+    font-size: 48px;
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 30px;
 }
-.flexcontainer {
-    background-color: lightgrey;
-    width: 3000px;
-    border: 15px solid green;
-    padding: 50px;
-    margin: 20px;
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 50px 0;
+}
+
+.box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 800px;
+    height: 800px;
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.box p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.play-btn, .learn-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.play-btn {
+    background-color: #28a745;
+}
+
+.play-btn:hover {
+    background-color: #218838;
+}
+
+.learn-btn {
+    background-color: #17a2b8;
+}
+
+.learn-btn:hover {
+    background-color: #138496;
+}
+.box img {
+    width: 100%; 
+    max-width: 500px;
+    height: auto;
+}
+
+.box h2 {
+    font-size: 40px; 
+}
+
+.box p {
+    font-size: 20px;
 }
