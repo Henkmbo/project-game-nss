@@ -35,7 +35,32 @@ if (isset($decodedParams->scope) && !empty($decodedParams->scope)) {
                     $response['message'] = 'Database query failed';
                 }
                 
+            } if ($decodedParams->action == 'amountOfUsers') {
+                $stmt = $dbh->prepare("SELECT COUNT(*) FROM users");
+                if ($stmt->execute()) {
+                    $amountOfUsers = $stmt->fetchColumn();
+                    $response['status'] = 200;
+                    $response['message'] = 'Amount of users retrieved';
+                    $response['data']['amountOfUsers'] = $amountOfUsers;
+                } else {
+                    $response['status'] = 500;
+                    $response['message'] = 'Failed to retrieve amount of users';
+                }
+            } 
+            if ($decodedParams->action == 'amountOfMemory') {
+                $stmt = $dbh->prepare("SELECT COUNT(*) FROM questions");
+                if ($stmt->execute()) {
+                    $amountOfMemory = $stmt->fetchColumn();
+                    $response['status'] = 200;
+                    $response['message'] = 'Amount of memory retrieved';
+                    $response['data']['amountOfMemory'] = $amountOfMemory;
+                } else {
+                    $response['status'] = 500;
+                    $response['message'] = 'Failed to retrieve amount of memory';
+                }
+                
             }
+
         }
     } if ($decodedParams->scope == 'memory') {
         if (isset($decodedParams->action) && !empty($decodedParams->action)) {
@@ -55,6 +80,7 @@ if (isset($decodedParams->scope) && !empty($decodedParams->scope)) {
                         $response['message'] = 'Questions and answers retrieved';
                         $response['data']['questions'] = $questions;
                         $response['data']['answers'] = $answers;
+                        
                     } else {
                         $response['status'] = 500;
                         $response['message'] = 'Failed to retrieve answers';
@@ -64,6 +90,8 @@ if (isset($decodedParams->scope) && !empty($decodedParams->scope)) {
                     $response['message'] = 'Failed to retrieve questions';
                 }
             }
+
+
         }
     }
     

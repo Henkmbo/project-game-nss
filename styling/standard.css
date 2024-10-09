@@ -605,6 +605,9 @@ nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
 .justify-end {
   justify-content: flex-end;
 }
+.justify-space-around {
+  justify-content: space-around;
+}
 
 /* ALIGN-ITEMS */
 

@@ -24,7 +24,7 @@
                   Aantal gebruikers
                 </div>
                 <div>
-                  <strong class="amountOfUsers">1</strong>
+                  <strong class="amountOfUsers"></strong>
                 </div>
               </div>
               </div>
@@ -38,10 +38,10 @@
               </div>
               <div class="p-l-20 flex direction-c justify-center">
                 <div>
-                  Memory aantal
+                  Aantal vragen/antwoorden
                 </div>
                 <div>
-                  <strong>10</strong>
+                  <strong class="amountOfMemory"></strong>
                 </div>
               </div>
               </div>
