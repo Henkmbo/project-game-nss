@@ -15,7 +15,7 @@
    
     <section class="boxes">
         <div class="box">
-        <img src="./afbeeldingen/memory.jpeg" >
+        <img  src="./afbeeldingen/memory.jpg">
             <h2>Speel nu</h2>
             <p>Test je kennis over Backend Development door een uitdagend Memory spel te spelen. 
             Match de kaarten met termen zoals databases, API's, server-side programming, en meer.
@@ -31,7 +31,6 @@
             <p>Het doel van dit Memory spel is om alle paren van backend-technologieën te matchen. 
             Klik op een kaart om deze te onthullen en zoek naar de bijbehorende term. Wil je meer 
             leren over deze technologieën? Klik hieronder voor een uitgebreide uitleg!</p>
-            <img href="">
             <a href="./uitleg.php" class="learn-btn">Lees meer</a>
         </div>
     </section>
