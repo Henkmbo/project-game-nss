@@ -9,7 +9,7 @@
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Home</a>
+    <a class="navbar-brand" href="./index.php">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,7 +19,7 @@
           <a class="nav-link active" aria-current="page" href="./uitleg.php">Instructies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="memory.php">Memomry</a>
+          <a class="nav-link" href="memory.php">Memory</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="login.php">log in</a>
@@ -51,7 +51,7 @@
     
         <div class="box">
         <img src="./afbeeldingen/instructies.png" class="image2" >
-            <h2>Instructies</h2>
+            <h2>Instructies</h2>,2
             <p>Het doel van dit Memory spel is om alle paren van backend-technologieën te matchen. 
             Klik op een kaart om deze te onthullen en zoek naar de bijbehorende term. Wil je meer 
             leren over deze technologieën? Klik hieronder voor een uitgebreide uitleg!</p>
