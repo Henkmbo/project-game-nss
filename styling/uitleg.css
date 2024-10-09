@@ -1,10 +1,11 @@
 body { 
     background-color: #eaeaea;
+    font-size: 20px;
 }
 .boven { 
     text-align: center;
     height: 200px;
-    background-color: black;
+    background-color: #007bff;
     position: sticky;
     padding: 3px 0px;
     font-size: 30px;
@@ -31,4 +32,18 @@ body {
     justify-content: center;
     gap: 100px;
     margin: 50px 0;
+}
+.home-btn { 
+    background-color: #17a2b8;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+    background-color: #138496;
 }
