@@ -33,6 +33,7 @@ Het spel gaat door totdat alle paren zijn gevonden.
 Wanneer alle paren zijn gevonden, wordt het spel automatisch beëindigd en krijgt elke speler het aantal behaalde paren te zien. De speler met de meeste paren wint.
 <br>
 <h2><b>Veel plezier met het online Memory spel!</b></h2></h3>
+<button class="home-btn" onclick="window.location.href = 'index.php';">HOME</button>
     </div>
 </section>
 </body>
