@@ -12,16 +12,23 @@ body {
 }
 
 .basis {
-        width: 600px;
-        height: 800px;
-        border: 3px solid black;
-        text-align: center;
-        margin-top: 5px;
-        margin-left: auto;
-        margin-right: auto;
-        position: sticky;
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 800px;
+    height: 800px;
+    transition: transform 0.3s ease;
+}
+
+.basis:hover {
+    transform: translateY(-5px);
 }
 
 .boxes { 
-    
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 50px 0;
 }
