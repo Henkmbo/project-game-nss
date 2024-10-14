@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./styling/memory.css">
 </head>
 <body>
+
+
     <div class="container">
     <canvas id="canvas"></canvas>
         <h2 class="heading">Memory Game</h2>
@@ -20,8 +22,8 @@
     </div>
 
     <script src="./script.js"></script>
-    
 
+    
 </body>
 </html>
 

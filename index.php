@@ -51,7 +51,7 @@
     
         <div class="box">
         <img src="./afbeeldingen/instructies.png" class="image2" >
-            <h2>Instructies</h2>,2
+            <h2>Instructies</h2>
             <p>Het doel van dit Memory spel is om alle paren van backend-technologieën te matchen. 
             Klik op een kaart om deze te onthullen en zoek naar de bijbehorende term. Wil je meer 
             leren over deze technologieën? Klik hieronder voor een uitgebreide uitleg!</p>

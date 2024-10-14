@@ -57,7 +57,7 @@
         <div class="p-r-30">
           <div class="left">
             <div class="p-t-50 p-b-50 p-l-30">
-              test
+              
             </div>
           </div>
         </div>
@@ -65,13 +65,13 @@
           <div>
             <div class="left">
               <div class="p-t-50 p-b-50 p-l-30">
-                test
+                
               </div>
             </div>
             <div class="p-t-60">
               <div class="left">
                 <div class="p-t-50 p-b-50 p-l-30">
-                  test
+                  
                 </div>
               </div>
             </div>
